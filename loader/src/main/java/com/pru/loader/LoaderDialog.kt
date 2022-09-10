@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import com.bumptech.glide.Glide
 import com.pru.loader.databinding.LoadingDialogBinding
 
-class Loader(context: Context) : Dialog(context) {
+class LoaderDialog(context: Context) : Dialog(context) {
     private var binding: LoadingDialogBinding = LoadingDialogBinding.inflate(layoutInflater)
 
     init {
