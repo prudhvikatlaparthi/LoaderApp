@@ -1,18 +1,26 @@
 package com.pru.sampleloaderapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.pru.loader.Loader
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.pru.loader.LoaderDialog
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var loader : Loader
+    private lateinit var loaderDialog: LoaderDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        loader = Loader(context = this)
+        loaderDialog = LoaderDialog(context = this)
         findViewById<Button>(R.id.btnTap).setOnClickListener {
-            loader.start()
+            lifecycleScope.launch {
+                loaderDialog.show()
+                delay(3000)
+                loaderDialog.dismiss()
+            }
+
         }
     }
 }
