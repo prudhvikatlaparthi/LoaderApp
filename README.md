@@ -9,18 +9,18 @@ allprojects {
 		}
 }
 
-#Step 2. Add the dependency
+# Step 2. Add the dependency
 dependencies {
 	        implementation 'com.github.prudhvikatlaparthi:LoaderApp:2.1.1'
 }
 
-#Step 3. Create instance
+# Step 3. Create instance
 val loaderDialog: LoaderDialog = LoaderDialog(context = this)
 
-#Step 4. Show Loader
+# Step 4. Show Loader
 loaderDialog.show()
 
-#Step 5. Dismiss Loader
+# Step 5. Dismiss Loader
 loaderDialog.dismiss()
 
 ☮️ Peace Happy Coding 😊
