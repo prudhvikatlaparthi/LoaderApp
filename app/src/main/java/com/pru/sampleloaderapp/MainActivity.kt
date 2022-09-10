@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         loader = Loader(context = this)
         findViewById<Button>(R.id.btnTap).setOnClickListener {
-            loader.show()
+            loader.start()
         }
     }
 }
