@@ -12,20 +12,24 @@ class Loader(context: Context) : Dialog(context) {
 
     init {
         setContentView(binding.root)
+        this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        this.setCancelable(false)
     }
 
 
-    fun show(
+    fun start(
         message: CharSequence? = "Loading..."
     ): Loader {
         this.setMessage(message)
-        this.setCancelable(false)
         Glide.with(context)
             .load(R.drawable.loader)
             .into(binding.pbView)
-        this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         this.show()
         return this
+    }
+
+    fun stop(){
+        this.dismiss()
     }
 
     private fun setMessage(message: CharSequence?) {
