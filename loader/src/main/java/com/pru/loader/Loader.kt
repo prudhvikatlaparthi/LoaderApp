@@ -16,20 +16,12 @@ class Loader(context: Context) : Dialog(context) {
         this.setCancelable(false)
     }
 
-
-    fun start(
-        message: CharSequence? = "Loading..."
-    ): Loader {
-        this.setMessage(message)
+    override fun show() {
+        this.setMessage(binding.tvMessage.text)
         Glide.with(context)
             .load(R.drawable.loader)
             .into(binding.pbView)
-        this.show()
-        return this
-    }
-
-    fun stop(){
-        this.dismiss()
+        super.show()
     }
 
     private fun setMessage(message: CharSequence?) {
